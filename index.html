@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="브라우저에서 사진을 640px 이하, 400KB 이하로 자동 압축합니다.">
+  <title>Photo Compressor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Photo Compressor</h1>
+      <p>사진을 640px 이하 · 400KB 이하로 자동 압축합니다.</p>
+    </header>
+
+    <section class="upload-card">
+      <label class="drop-zone" id="dropZone" for="fileInput">
+        <span class="upload-icon">＋</span>
+        <strong>사진 선택하기</strong>
+        <span>또는 사진을 여기에 끌어놓으세요</span>
+        <small>JPG · JPEG · PNG · WebP · 여러 장 선택 가능</small>
+        <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+      </label>
+    </section>
+
+    <section class="settings">
+      <div>
+        <span class="setting-label">자동 변환 기준</span>
+        <span class="setting-value">긴 변 최대 640px / 최대 400KB</span>
+      </div>
+      <button id="clearButton" class="text-button" type="button" hidden>전체 삭제</button>
+    </section>
+
+    <section id="resultSection" class="results" hidden>
+      <div class="result-header">
+        <h2>변환 결과</h2>
+        <button id="downloadAllButton" class="primary-button" type="button" disabled>
+          전체 다운로드
+        </button>
+      </div>
+      <div id="resultList"></div>
+    </section>
+
+    <p class="privacy">사진은 서버로 업로드되지 않고 이 브라우저에서만 처리됩니다.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
